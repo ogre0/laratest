@@ -14,6 +14,7 @@ import Detail from './components/Detail.vue';
 
 require('./bootstrap');
 
+Vue.prototype.$http = window.axios;
 
 Vue.use(VueRouter);
 Vue.use(VueBreadcrumbs, {
