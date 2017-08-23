@@ -1,8 +1,4 @@
-let mix = require('laravel-mix');
-
-
-
-
+const mix = require('laravel-mix')
 
 // config eslint
 mix.webpackConfig({
@@ -11,14 +7,11 @@ mix.webpackConfig({
       {
         exclude: /node_modules/,
         loader: 'eslint-loader',
-        test: /\.(js|vue)?$/ 
-      },
+        test: /\.(js|vue)?$/
+      }
     ]
   }
 })
-
-
-
 
 /*
  |--------------------------------------------------------------------------
@@ -32,5 +25,5 @@ mix.webpackConfig({
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .extract(['vue'])
-   .sass('resources/assets/sass/app.scss', 'public/css');
+  .extract(['vue'])
+  .sass('resources/assets/sass/app.scss', 'public/css')

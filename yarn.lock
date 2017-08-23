@@ -2119,6 +2119,10 @@ eslint-config-airbnb@^15.1.0:
   dependencies:
     eslint-config-airbnb-base "^11.3.0"
 
+eslint-config-vue@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-vue/-/eslint-config-vue-2.0.2.tgz#a3ab1004899e49327a94c63e24d47a396b2f4848"
+
 eslint-friendly-formatter@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/eslint-friendly-formatter/-/eslint-friendly-formatter-3.0.0.tgz#278874435a6c46ec1d94fa0b1ff494e30ef04290"
@@ -6482,9 +6486,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-breadcrumbs@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/vue-breadcrumbs/-/vue-breadcrumbs-1.1.2.tgz#b83e03693d07628614c3d5683d74a5dd20d36f6c"
+"vue-bulma-breadcrumb@https://github.com/ogre0/breadcrumb.git":
+  version "1.0.1"
+  resolved "https://github.com/ogre0/breadcrumb.git#c3e9a872e72f326306baf1fcb1e756b218a6b60a"
 
 vue-hot-reload-api@^2.1.0:
   version "2.1.0"
