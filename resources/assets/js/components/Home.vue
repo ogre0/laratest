@@ -20,27 +20,27 @@
 
 <script>
 export default {
-  created() {
-    this.test();
+  created () {
+    this.test()
   },
-  mounted() {
-    console.log('Component mounted. Index.');
+  mounted () {
+    console.log('Component mounted. Index.')
   },
-  data() {
+  data () {
     return {
-      aaa: {},
-    };
+      aaa: {}
+    }
   },
   methods: {
-    test() {
+    test () {
       this.$http({
         url: '/api/test',
-        method: 'GET',
+        method: 'GET'
       }).then((res) => {
-        this.aaa = res.data;
-        console.log(res);
-      });
-    },
-  },
-};
+        this.aaa = res.data
+        console.log(res)
+      })
+    }
+  }
+}
 </script>

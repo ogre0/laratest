@@ -16,8 +16,8 @@
 
 <script>
 export default {
-  mounted() {
-    console.log('Component mounted. Blog.');
-  },
-};
+  mounted () {
+    console.log('Component mounted. Blog.')
+  }
+}
 </script>
