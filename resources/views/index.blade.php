@@ -258,7 +258,7 @@
 </section>
 
 <section>
-  <breadcrumbs></breadcrumbs>
+  <breadcrumb :list="list"></breadcrumb>
   <router-view></router-view>
 </section>
 

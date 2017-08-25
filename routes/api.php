@@ -22,3 +22,9 @@ Route::group(['middleware' => 'api'], function() {
     return json_encode([['id' => 1], ['id' => 2]]);
   });
 });
+
+Route::group(['middleware' => 'api'], function() {
+  Route::get('test', function (Request $request) {
+    return json_encode([['id' => 1], ['id' => 2]]);
+  });
+});

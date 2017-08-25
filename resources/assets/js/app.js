@@ -7,18 +7,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import VueMeta from 'vue-meta'
 import Breadcrumb from 'vue-bulma-breadcrumb/src/Breadcrumb.vue'
 
 import Home from './components/Home.vue'
 import Blog from './components/Blog.vue'
 import Detail from './components/Detail.vue'
+import Articles from './components/Articles.vue'
 
 require('./bootstrap')
 
 Vue.prototype.$http = window.axios
 
 Vue.use(VueRouter)
-Vue.use(Breadcrumb)
+Vue.use(VueMeta)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,6 +31,8 @@ Vue.use(Breadcrumb)
 Vue.component('home', Home)
 Vue.component('blog', Blog)
 Vue.component('detail', Detail)
+Vue.component('articles', Articles)
+Vue.component('breadcrumb', Breadcrumb)
 
 const router = new VueRouter({
   mode: 'history',
@@ -36,14 +40,18 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      component: Blog,
       meta: {
         breadcrumb: 'Home',
         title: 'Home2'
       },
       children:
       [
+        {
+          path: '',
+          name: 'home',
+          component: Home
+        },
         {
           path: '/blog',
           component: Blog,
@@ -54,11 +62,21 @@ const router = new VueRouter({
           children:
           [
             {
-              path: 'detail/:id?',
+              path: '',
+              component: Articles
+            },
+            {
+              path: 'detail',
               component: Detail,
               meta: {
                 breadcrumb: 'Detail'
-              }
+              },
+              children: [
+                {
+                  path: 'ab',
+                  component: Home
+                }
+              ]
             }
           ]
         }
@@ -67,15 +85,16 @@ const router = new VueRouter({
   ]
 })
 
+/*
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = to.meta.title
   }
   next()
 })
+*/
 
 const app = new Vue({
   router
 })
-
 app.$mount('#app')
